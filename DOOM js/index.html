@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina para probar DOOM en javaScript</title>
+</head>
+
+<body>
+    <div id="elementos">
+        <form id="formulario">
+            Nombre: <input type="text" name="nombre" value="alfonso" />
+            <br />
+            Apellido: <input type="text" name="apellido" value="gomajoa" />
+            <br />
+        </form>
+        <button onclick="mostrarValor()"> Mostrar </button>
+        <img src = "/DOOM js/doc/js_icon.jpg" id= "imagenJS" alt = "">
+    </div>
+    <div id="cambioTexto">
+        <script>
+            function mostrarValor() {
+                let fm = document.forms["formulario"]
+                let tx = "";
+                let nombre = fm["nombre"];
+                let apellido = fm["apellido"];
+                tx = nombre.value + "<br/>" + apellido.value;
+                document.getElementById("cambioTexto").innerHTML = tx;
+            }
+        </script>
+    </div id="clear">
+    <div>
+        <button onclick="limpiar()">
+            <h1> limpiar </h1>
+        </button>
+        <script>
+            function limpiar() {
+                document.write("limpio")
+            }
+        </script>
+    </div>
+    <div id="cambioImagen">
+        <button onclick="cambiarImagen()"> Siguiente imagen </button>
+        <script>
+            function cambiarImagen(){
+                document.getElementById("imagenJS").src = "/DOOM js/doc/java_icon.jpg";
+            }   
+        </script>
+    </div>
+</body>
+
+</html>

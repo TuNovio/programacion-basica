@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="entrada()">
+    <script>
+        function entrada(){
+            alert("Ingreso a la pagina web")
+        }
+    </script>
+   <h1 id="titulo"> Manejo de eventos</h1> 
+   <button onclick="evento()">Cambiar</button>
+    <script>
+        function evento(){
+            document.getElementById("titulo").innerHTML="Cambio el titulo"
+        }
+    </script>
+    <div>
+        <h2 id="asociado"> Click para asociar</h2>
+        <script>
+            var texth2 = document.getElementById("asociado");
+            texth2.onclick = cambiar;
+            function cambiar(){
+                texth2.innerHTML = "Asociado al texto"
+            }
+        </script>
+    </div>
+    <h3 id="nombre"> Presiona para mostrar nombre </h3>
+    <div id="mostarNombre">
+        <script>
+            var darNombre = document.getElementById("nombre");
+            darNombre.onclick = nombreE;
+            function nombreE(){
+                document.getElementById("mostarNombre").innerHTML = "Alfonso Gomajoa Achicanoy";
+            }
+        </script>
+    </div>
+    <div>
+        Mensaje: <input type="text" id="ingreso" onchange="modificar();"/>
+        <script>
+            let nm = document.getElementById("ingreso");
+            function modificar(){
+                nm.value = nm.value.toUpperCase();
+            }
+        </script>
+    </div>
+    <div>
+        <h4 style="color: blue" id="cambioColor" onmouseover="colorRojo();" onmouseout="colorAzul()">Pasa el mouse sobre mi</h4>
+        <script>
+            let texto = document.getElementById("cambioColor");
+            function colorRojo(){
+                texto.style.color = "red";
+            }
+            function colorAzul(){
+                texto.style.color = "blue";
+            }
+        </script>
+    </div>
+    <div>
+        Parrafo: <input type="text" style="background-color: darkgreen" id="enfoque" onfocus="mirar()" onblur=" apartar()"/>
+        <script>
+            let pEnfoque = document.getElementById("enfoque");
+            function mirar(){
+                pEnfoque.style.background = "cyan";
+            }
+            function apartar(){
+                pEnfoque.style.background = "darkgreen";
+            }
+        </script>
+    </div>
+    <div>
+        <P>envent listener</P>
+        Nombre: <input type="text" id="darNombreE"/>
+        Apellio: <input type="text" id="darApellidoE">
+        <script>
+            document.getElementById("darNombreE").addEventListener("focus", enfoque);
+            document.getElementById("darNombreE").addEventListener("blur", regresa);
+
+
+            document.getElementById("darApellidoE").addEventListener("focus", enfoque);
+            document.getElementById("darApellidoE").addEventListener("blur", regresa);
+            function enfoque(evento){
+                let componente = evento.target;
+                componente.style.background = "yellow";
+            }
+            function regresa(evento){
+                let componente = evento.target;
+                componente.style.background = "white";
+            }
+        </script>
+    </div>
+</body>
+</html>
