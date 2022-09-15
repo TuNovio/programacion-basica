@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         *dibujo de un cuadrado sin relleno 
+         */
+        function dibujo(){
+            const canvas = document.getElementById("tutorial");
+            if(canvas.getContext){
+                const ctx = canvas.getContext("2d");
+            }
+        }
+        /**
+         * dibujo cuadrado con relleno de color rojo y azul
+         */
+        function dibujoSimple(){
+            const canvas = document.getElementById("canva");
+            if(canvas.getContext){
+                const ctx = canvas.getContext("2d");
+
+                ctx.fillStyle = "rgb(200, 0, 0)";
+                ctx.fillRect(10,10,50,50);
+
+                //cuadro de color azul
+                ctx.fillStyle = "rgba(0,0,200,0.5)";
+                ctx.fillRect(30,30,50,50);
+            }
+        }
+        
+    </script>
+    <style>
+        canvas{border: 1px solid black;}
+    </style>
+</head>
+<body onload="dibujo();">
+    <div onload="dibujoSimple();">
+        <canvas id="canva" widht="150" height="150" ></canvas>
+    </div>
+    <div onload="dibujo();">
+        <canvas id="tutorial" widht="150" height="150" ></canvas>
+    </div>
+</body>
+</html>
